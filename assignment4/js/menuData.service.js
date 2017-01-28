@@ -2,19 +2,21 @@
   'use strict';
 
   angular.module('data')
-  .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
   .service('MenuDataService', MenuDataService);
 
-  MenuDataService.$inject = ['$http', '$ApiBasePath'];
-  function MenuDataService($http, ApiBasePath) {
+  MenuDataService.$inject = ['$http'];
+  function MenuDataService($http) {
     var service = this;
 
-    service.getAllCategories = function (searchTerm) {
+    service.getAllCategories = function () {
+      var menuItems = [];
       return $http({
         method: "GET",
-        url: (ApiBasePath+'/categories.json')
+        url: ('https://davids-restaurant.herokuapp.com/categories.json')
       }).then(function(result) {
-        return result.data
+        menuItems = result.data;
+        // console.log(menuItems);
+        return menuItems;
       });
     };
   }
