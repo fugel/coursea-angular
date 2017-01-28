@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('myPage')
+  angular.module('myMenuPage')
   .config(RoutesConfig);
 
   RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -17,6 +17,11 @@
       url: '/',
       templateUrl: 'views/home.template.html',
       controller: 'mainController as mainCtrl'
+    })
+    .state('categories', {
+      url: '/categories',
+      templateUrl: 'views/categories.template.html',
+      controller: 'menuController as mainCtrl'
     });
   }
 }());

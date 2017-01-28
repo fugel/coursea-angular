@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('myPage')
+  angular.module('myMenuPage')
   .controller('mainController', mainController);
 
   mainController.$inject = []
@@ -10,5 +10,4 @@
 
     mainCtrl.welcome = "Hello World";
   };
-
 }());
