@@ -1,23 +1,15 @@
 (function() {
   'use strict';
 
-  angular.module('myMenuPage')
+  angular.module('data')
   .controller('menuController', menuController);
 
-  menuController.$inject = ['MenuDataService']
-  function menuController(MenuDataService) {
+  menuController.$inject = ['MenuDataService', 'items']
+  function menuController(MenuDataService, items) {
     var mainCtrl = this;
 
     mainCtrl.welcome = "Menu Data Service";
+    mainCtrl.items = items;
 
-    var promise = MenuDataService.getAllCategories();;
-
-    promise.then(function(menuItems){
-      mainCtrl.items = menuItems
-      // console.log(mainCtrl.items);
-    })
-    .catch(function(error){
-      console.log(error);
-    });
   };
 }());

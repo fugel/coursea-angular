@@ -1,5 +1,6 @@
 <div class="collection">
-  <a ng-repeat="item in $ctrl.items" class="collection-item" ui-sref="mainList.itemDetail({itemId: $index})">
+  <a ng-repeat="item in $ctrl.items" class="collection-item"
+    ui-sref="categories.detail({itemId: $index})">
     {{ item.name }}
   </a>
 </div>
