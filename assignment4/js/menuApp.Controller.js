@@ -6,8 +6,6 @@
 
   mainController.$inject = []
   function mainController() {
-    var mainCtrl = this;
 
-    mainCtrl.welcome = "Hello World";
   };
 }());

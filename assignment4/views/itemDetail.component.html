@@ -1,4 +1,7 @@
-
-    <p ng-repeat="item in $ctrl.items" class="collection-item">
-      {{ item.name }}
-    </p>
+<div ng-repeat="item in $ctrl.items">
+  <div class="divider"></div>
+  <div class="section">
+    <h5>{{ item.name }}</h5>
+    <p>{{ item.description }}</p>
+  </div>
+</div>

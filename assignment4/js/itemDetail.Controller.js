@@ -9,16 +9,13 @@
     var itemCtrl = this;
 
     var item = items[$stateParams.itemId];
-    itemCtrl.welcome = "Category selected: "+item.name;
-
-    // console.log(item);
+    itemCtrl.welcome = item.name;
 
     var shortname = item.short_name;
     var promise = MenuDataService.getItemsForCategory(shortname);
     promise.then(function(result){
       itemCtrl.items = []
       itemCtrl.items = result.menu_items;
-      console.log(result);
     })
 
   };

@@ -1,5 +1,8 @@
+<h4>Pick a Category</h4>
 <div class="collection">
-  <a ng-repeat="item in $ctrl.items" class="collection-item"
+  <a ng-repeat="item in $ctrl.items"
+    class="collection-item"
+    ui-sref-active="active"
     ui-sref="categories.detail({itemId: $index})">
     {{ item.name }}
   </a>

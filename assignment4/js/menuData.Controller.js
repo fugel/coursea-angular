@@ -8,7 +8,6 @@
   function menuController(MenuDataService, items) {
     var mainCtrl = this;
 
-    mainCtrl.welcome = "Menu Data Service";
     mainCtrl.items = items;
 
   };
