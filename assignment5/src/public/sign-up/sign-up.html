@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Sign up</h1>
+  <form name="customerDetails" novalidate>
+
+    <input type="text" name="firstName" placeholder="First Name" ng-model="signUpCtrl.user.firstName" required>&nbsp;
+    <span class="error" ng-if="customerDetails.firstName.$error.required && customerDetails.firstName.$touched">
+      First name is missing!
+    </span><br /><br />
+    <input type="text" name="lastName" placeholder="Last Name" ng-model="signUpCtrl.user.lastName" required>&nbsp;
+    <span class="error" ng-if="customerDetails.lastName.$error.required && customerDetails.lastName.$touched">
+      Last name is missing!
+    </span><br /><br />
+    <input type="email" name="email" placeholder="Email" ng-model="signUpCtrl.user.email" required>&nbsp;
+    <span class="error" ng-if="customerDetails.email.$invalid && customerDetails.email.$touched">
+      Email should be in user@domain format
+    </span><br /><br />
+    <input type="text" name="phoneNumber" placeholder="###-###-####" ng-model="signUpCtrl.user.phoneNumber" required pattern="(\d{3})-(\d{3})-(\d{4})">&nbsp;
+    <span class="error" ng-if="customerDetails.phoneNumber.$invalid && customerDetails.phoneNumber.$touched">
+      Phone number should be in ###-###-#### format
+    </span><br /><br />
+    <input type="text" name="favItem" placeholder="Favourite Item" ng-model="signUpCtrl.user.favItem" required pattern="([A-Z]{1,2})(\d{1,2})">
+    <span class="error" ng-if="customerDetails.favItem.$invalid && customerDetails.favItem.$touched">
+      Item should be a short code eg. L23
+    </span><br /><br />
+
+    <button ng-click="signUpCtrl.do(signUpCtrl.user);">Submit</button>
+    <!-- <button ng-disabled="customerDetails.$invalid" ng-click="signUpCtrl.do()">Submit</button> -->
+
+  </form>
+
+</div>
