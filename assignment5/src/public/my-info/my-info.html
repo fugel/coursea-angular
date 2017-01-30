@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Your Info</h1>
   <p ng-if="!myInfoCtrl.customerDetails">
-    <a ui-sref="public.signup">Sign Up!</a>
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
   </p>
   <p ng-if="myInfoCtrl.customerDetails">
     <strong>First Name:</strong> {{ myInfoCtrl.customerDetails.firstName }}<br />
@@ -10,6 +10,6 @@
     <strong>Phone Number:</strong> {{ myInfoCtrl.customerDetails.phoneNumber }}<br /><br />
     <strong>Favourite Meal Name:</strong> {{ myInfoCtrl.customerDetails.mealName }}<br />
     <strong>Favourite Meal Description:</strong> {{ myInfoCtrl.customerDetails.mealDescription }}<br /><br />
-    <img src="{{ myInfoCtrl.ApiPath }}/images/{{ myInfoCtrl.customerDetails.favItem }}.jpg" />
+    <img ng-src="{{ myInfoCtrl.ApiPath }}/images/{{ myInfoCtrl.customerDetails.favItem }}.jpg" alt="{{ myInfoCtrl.customerDetails.mealName }}">
   </p>
 </div>
