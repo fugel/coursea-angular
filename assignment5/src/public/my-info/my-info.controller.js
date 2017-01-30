@@ -4,10 +4,11 @@
 angular.module('public')
 .controller('MyInfoController', MyInfoController)
 
-MyInfoController.$inject = ['customerDetails'];
-function MyInfoController(customerDetails) {
+MyInfoController.$inject = ['customerDetails', 'ApiPath'];
+function MyInfoController(customerDetails, ApiPath) {
   var $myInfoCtrl = this;
-  $myInfoCtrl.customerDetails = customerDetails
+  $myInfoCtrl.customerDetails = customerDetails;
+  $myInfoCtrl.ApiPath = ApiPath;
 }
 
 }());

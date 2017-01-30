@@ -28,13 +28,10 @@ function MenuService($http, ApiPath) {
   };
 
   service.checkItem = function (short_name) {
-    console.log('Checking: '+short_name);
+    // console.log('Checking: '+short_name);
     return $http.get(ApiPath + '/menu_items/' + short_name + '.json').then(function success(response) {
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
-    },
-    function error(response) {
-      console.log(response.status);
     });
   };
 
