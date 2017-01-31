@@ -20,11 +20,11 @@
     </span><br /><br />
     <input type="text" name="favItem" placeholder="Favourite Item" ng-model="signUpCtrl.user.favItem" required pattern="([A-Z]{1,2})(\d{1,2})">
     <span class="error" ng-if="customerDetails.favItem.$invalid && customerDetails.favItem.$touched">
-      Item should be a short code eg. L23
-    </span>{{ signUpCtrl.noMenuItem }}<br /><br />
+      Item should be a short code eg. L23 
+    </span>
+    <span class="error">{{ signUpCtrl.noMenuItem }}</span><br /><br />
 
-    <button ng-click="signUpCtrl.do(signUpCtrl.user);">Submit</button><br /><br />
-    <!-- <button ng-disabled="customerDetails.$invalid" ng-click="signUpCtrl.do()">Submit</button> -->
+    <button ng-disabled="customerDetails.$invalid" ng-click="signUpCtrl.do(signUpCtrl.user)">Submit</button><br /><br />
     <p ng-if="signUpCtrl.successMsg">{{ signUpCtrl.successMsg }}</p>
 
   </form>
